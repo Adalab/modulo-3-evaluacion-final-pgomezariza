@@ -1,16 +1,17 @@
-import logo from '../images/logo.svg';
+import { useState, useEffect } from 'react';
 import '../styles/App.scss';
+import getApiData from '../services/moviesApi';
+
 
 function App() {
-  return (
-    <div className="App">
-      <img src={logo} className="App-logo" alt="logo" />
+  const [dataMovies, setDataMovies] = useState ([]);
 
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis alias fuga odio odit atque expedita assumenda numquam quidem, voluptatibus facere ullam eos quos iusto beatae sit perspiciatis dolore laudantium minus.
-        </p>
-    </div>
-  );
-}
+  useEffect(() => {
+    getApiData().then((dataClean) => {
+      setDataMovies(dataClean);
+    });
+  }, [])
+  
+};
 
 export default App;

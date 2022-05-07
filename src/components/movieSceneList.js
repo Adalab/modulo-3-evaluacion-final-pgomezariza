@@ -1,10 +1,10 @@
-import movieSceneItem from './movieSceneItem';
+import MovieSceneItem from './MovieSceneItem';
 
 function MovieSceneList(props) {
   const moviesElements = props.movies.map((movie) => {
     return (
       <li key={movie.id} className="main__section1--movie">
-        <movieSceneItem movie={movie} />
+        <MovieSceneItem movie={movie} />
       </li>
     );
   });

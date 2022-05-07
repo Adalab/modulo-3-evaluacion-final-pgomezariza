@@ -1,22 +1,29 @@
 import { useState, useEffect } from 'react';
-import getApiData from '../services/moviesApi';
-//import movieSceneList from './movieSceneList';
-import Filters from './Filters';
-//import movieSceneDetail from './movieSceneDetail';
-import localStorage from '../services/localStorage';
 import { Routes, Route } from 'react-router-dom';
-import { useLocation, matchPath  } from 'react-router';
+import { matchPath, useLocation } from 'react-router';
+
+import getApiData from '../services/moviesApi';
+import localStorage from '../services/localStorage';
+
+import MovieSceneList from './MovieSceneList';
+import Filters from './Filters';
+import MovieSceneDetail from './MovieSceneDetail';
+
+
+
 import '../styles/App.scss';
 
 
-const App = () => {
+function App() {
   const [dataMovies, setDataMovies] = useState(localStorage.get('movies', []));
-  const [filterMovie, setFilterMovie] = useState(localStorage.get('filterMovie', ''));
-  const [filterYear, setFilterYear] = useState(localStorage.get('filterYear', ''));
+  const [filterMovie, setFilterMovie] = useState('');
+  const [filterYears, setFilterYear] = useState('');
 
   useEffect(() => {
+    console.log(dataMovies)
     if (dataMovies.length === 0) {
       getApiData().then((dataClean) => {
+        console.log(dataClean)
         setDataMovies(dataClean);
       });
     }
@@ -24,13 +31,12 @@ const App = () => {
 
   useEffect(() => {
     localStorage.set('movies', dataMovies);
-    localStorage.set('filterMovie', filterMovie);
-    localStorage.set('filterYear', filterYear);
-  }, [dataMovies, filterMovie, filterYear]);
+  }, [dataMovies]); 
 
   const handleFilterMovie = (value) => {
     setFilterMovie(value);
   };
+
   const handleFilterYear = (value) => {
     setFilterYear(value);
   };
@@ -40,10 +46,10 @@ const App = () => {
       return item.title.toLowerCase().includes(filterMovie.toLowerCase());
     })
     .filter((item) => {
-      if (filterYear.length === 0) {
+      if (filterYears.length === 0) {
         return true;
       } else {
-        return filterYear.includes(item.year);
+        return filterYears.includes(item.year);
       }
     });
 
@@ -54,11 +60,12 @@ const App = () => {
     });
     return uniqueYear;
   };
-  const { pathname } = useLocation();
-  const dataPath = matchPath('/movie/:movieId', pathname);
 
-  const movieId = dataPath !== null ? dataPath.params.movieId : null;
-  const movieFound = dataMovies.find((movie) => movie.id === movieId);
+  const { pathname } = useLocation();
+  const dataPath = matchPath('/movie/:id', pathname);
+
+  const movieId = dataPath !== null ? dataPath.params.id : null;
+  const movieFound = movieFilters.find((item) => item.id === parseInt(movieId));
 
   return (
     <>
@@ -74,13 +81,13 @@ const App = () => {
                 handleFilterYear={handleFilterYear}
                 years={getYear()}
               />
-              <movieSceneList movies={movieFilters} />
+              <MovieSceneList movies={movieFilters} />
             </>
           }
         />
         <Route
-          path="/movie/:movieId"
-          element={<movieSceneDetail user={movieFound} />}
+          path="/movie/:id"
+          element={<MovieSceneDetail user={movieFound} />}
         />
       </Routes>
     </>

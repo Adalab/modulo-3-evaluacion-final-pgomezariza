@@ -1,8 +1,8 @@
 function FilterMovie(props) {
   const handleMovieSearch = (ev) => {
-    ev.preventDefault();
     props.handleFilterMovie(ev.target.value);
   };
+
   return (
     <>
       <div className="main__form--movie">
@@ -14,7 +14,7 @@ function FilterMovie(props) {
             name="movieSearch"
             value={props.filterMovie}
             onChange={handleMovieSearch}
-            placeholder="Movie title..."
+            placeholder="Title..."
           />
         </label>
       </div>

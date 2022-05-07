@@ -68,7 +68,7 @@ function App() {
 
   return (
     <>
-      <h1 className="main__title">Owen Wilson WOW</h1>
+      <h1 className="title">Owen Wilson WOW</h1>
       <Routes>
         <Route
           path="/"
@@ -81,7 +81,7 @@ function App() {
                 years={getYear()}
               />
               <MovieSceneList movies={movieFilters} />
-              
+
             </>
           }
         />

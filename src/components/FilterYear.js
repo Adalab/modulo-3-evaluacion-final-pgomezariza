@@ -1,3 +1,5 @@
+import '../styles/FilterYear.scss';
+
 function FilterYear(props) {
   const handleFilterYear = (ev) => {
     props.handleFilterYear(ev.target.value);

@@ -1,5 +1,6 @@
 import FilterMovie from './FilterMovie';
 import FilterYear from './FilterYear';
+import '../styles/Filters.scss';
 
 function Filters(props) {
   const handleSubmit = (ev) => {

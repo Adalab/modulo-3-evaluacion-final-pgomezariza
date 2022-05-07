@@ -1,4 +1,6 @@
 import MovieSceneItem from './MovieSceneItem';
+import '../styles/MovieSceneList';
+
 
 function MovieSceneList(props) {
   // Si el array esta vacio devuelvo html con mensaje

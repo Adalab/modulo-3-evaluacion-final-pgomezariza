@@ -1,3 +1,5 @@
+import '../styles/FilterMovie.scss';
+
 function FilterMovie(props) {
   const handleFilterMovie = (ev) => {
     props.handleFilterMovie(ev.target.value);

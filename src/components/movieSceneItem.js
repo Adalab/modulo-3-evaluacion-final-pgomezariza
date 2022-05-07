@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
+import '../styles/MovieSceneItem.scss';
 
 function MovieSceneItem(props) {
   return (
     <>
-      <img
+      <img width="100" height="100" 
         className="main__section1--movieImage"
         alt={props.movie.movie}
         src={props.movie.poster}

@@ -15,16 +15,12 @@ function MovieSceneDetail(props) {
           <h2>{props.user.title}</h2>
           <p>"{props.user.full_line}"</p>
           <p>{props.user.director}</p>
-          <a
-            className="movie__details2--audio"
-            href={props.audio}
-            target="_blank"
-          >
+          <a className="audio" href={props.user.audio} target="blank">
             LISTEN
           </a>
         </div>
       </section>
-      <Link to="/" className="movie__details2--back">
+      <Link to="/" className="back__list">
         BACK
       </Link>
     </>

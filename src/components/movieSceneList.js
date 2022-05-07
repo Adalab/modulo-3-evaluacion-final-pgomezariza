@@ -1,6 +1,13 @@
 import MovieSceneItem from './MovieSceneItem';
 
 function MovieSceneList(props) {
+  // Si el array esta vacio devuelvo html con mensaje
+  if(props.movies.length < 1){
+    return (
+      <p>Lo sentimos. No hay ninguna película que coincida con su busqueda</p>
+    )
+  }
+  //Si no esta vacio continuo
   const moviesElements = props.movies.map((movie) => {
     return (
       <li key={movie.id} className="movies">

@@ -13,7 +13,7 @@ function MovieSceneItem(props) {
       <h2 className="movie__details1--title">
         {props.movie.title} - {props.movie.year}
       </h2>
-      <p className="movie__details1--Quote">"{props.movie.full_line}"</p>
+      <p className="movie__details1--Phrase">"{props.movie.full_line}"</p>
       <Link to={`/movie/${props.movie.id}`}
         className="movie__details1--btn">
         Details

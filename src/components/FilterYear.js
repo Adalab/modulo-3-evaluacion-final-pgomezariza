@@ -1,5 +1,5 @@
 function FilterYear(props) {
-  const handleYearSearch = (ev) => {
+  const handleFilterYear = (ev) => {
     props.handleFilterYear(ev.target.value);
   };
   const renderYears = () => {
@@ -13,17 +13,17 @@ function FilterYear(props) {
   };
   return (
     <>
-      <div className="main__form--year">
-        <label className="main__form--movieLabelYear" htmlFor="movieSearchYear">
-          Year
+      <div className="form__year">
+        <label className="form__yLabel" htmlFor="movieFilterYear">
+          YEAR
         </label>
         <select
-          className="main__form--movieInputYear"
-          name="movieSearchYear"
+          className="form__yInput"
+          name="movieFilterYear"
           id="year"
-          onChange={handleYearSearch}
+          onChange={handleFilterYear}
         >
-          <option className="main__form--movieOptYear" value="">
+          <option className="form--movieOptYear" value="">
             All
           </option>
           {renderYears()}

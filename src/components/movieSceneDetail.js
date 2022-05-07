@@ -2,20 +2,21 @@ import { Link } from 'react-router-dom';
 
 
 function MovieSceneDetail(props) {
+  console.log(props)
   return (
     <>
-      <section className="main__section2">
+      <section className="movie__details2">
         <img width="100" height="100"
-          className="main__section2--img"
-          alt={props.movie}
-          src={props.poster}
+          className="movie__details2--img"
+          alt={props.user.movie}
+          src={props.user.poster}
         />
-        <div className="main__section2--details">
-          <h2>{props.title}</h2>
-          <p>"{props.full_line}"</p>
-          <p>{props.director}</p>
+        <div className="movie__details2--others">
+          <h2>{props.user.title}</h2>
+          <p>"{props.user.full_line}"</p>
+          <p>{props.user.director}</p>
           <a
-            className="main__section2--audio"
+            className="movie__details2--audio"
             href={props.audio}
             target="_blank"
           >
@@ -23,7 +24,7 @@ function MovieSceneDetail(props) {
           </a>
         </div>
       </section>
-      <Link to="/" className="main__section2--back">
+      <Link to="/" className="movie__details2--back">
         BACK
       </Link>
     </>

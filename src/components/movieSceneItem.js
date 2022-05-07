@@ -2,20 +2,21 @@ import { Link } from 'react-router-dom';
 import '../styles/MovieSceneItem.scss';
 
 function MovieSceneItem(props) {
+  
   return (
     <>
       <img width="100" height="100" 
-        className="main__section1--movieImage"
+        className="movie__details1--img"
         alt={props.movie.movie}
         src={props.movie.poster}
       />
-      <h2 className="main__section1--movieTitle">
+      <h2 className="movie__details1--title">
         {props.movie.title} - {props.movie.year}
       </h2>
-      <p className="main__section1--movieQuote">"{props.movie.full_line}"</p>
+      <p className="movie__details1--Quote">"{props.movie.full_line}"</p>
       <Link to={`/movie/${props.movie.id}`}
-        className="main__section1--movieDetails">
-        Detailss
+        className="movie__details1--btn">
+        Details
       </Link>
     </>
   );

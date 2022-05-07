@@ -1,20 +1,20 @@
 function FilterMovie(props) {
-  const handleMovieSearch = (ev) => {
+  const handleFilterMovie = (ev) => {
     props.handleFilterMovie(ev.target.value);
   };
 
   return (
     <>
-      <div className="main__form--movie">
-        <label className="main__form--movieLabel" htmlFor="movieSearch">
-          Movie
+      <div className="form__movie">
+        <label className="form__mLabel" htmlFor="movieFilter">
+          MOVIE
           <input
-            className="main__form--movieInput"
             type="text"
-            name="movieSearch"
-            value={props.filterMovie}
-            onChange={handleMovieSearch}
+            className="form__mInput"
+            name="movieFilter"
+            onChange={handleFilterMovie}
             placeholder="Title..."
+            value={props.filterMovie}
           />
         </label>
       </div>

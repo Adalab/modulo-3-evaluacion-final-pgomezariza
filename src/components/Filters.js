@@ -8,7 +8,7 @@ function Filters(props) {
   
   return (
     <section className=''>
-      <form className='main__form' onSubmit={handleSubmit}>
+      <form className='form' onSubmit={handleSubmit}>
         <FilterMovie
           handleFilterMovie={props.handleFilterMovie}
           filterMovie={props.filterMovie}

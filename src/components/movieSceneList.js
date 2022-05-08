@@ -5,7 +5,7 @@ function MovieSceneList(props) {
   // Si el array esta vacio devuelvo html con mensaje
   if(props.movies.length < 1){
     return (
-      <p>Lo sentimos. No hay ninguna película que coincida con su busqueda</p>
+      <p className="movieNotFound">Lo sentimos. No hay ninguna película que coincida con su busqueda</p>
     )
   }
   //Si no esta vacio continuo

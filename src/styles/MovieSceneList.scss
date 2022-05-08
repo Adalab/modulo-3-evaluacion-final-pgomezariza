@@ -21,9 +21,12 @@
 .movie__details1--all {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+  padding: 5px;
+  
 
   @media all and (min-width: 768px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
   @media all and (min-width: 1200px) {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;

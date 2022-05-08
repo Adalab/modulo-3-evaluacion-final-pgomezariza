@@ -3,7 +3,6 @@ import '../styles/MovieSceneDetail.scss';
 
 
 function MovieSceneDetail(props) {
-  console.log(props)
   return (
     <>
       <section className="movie__details2">

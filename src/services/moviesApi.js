@@ -9,7 +9,7 @@ const getApiData = () => {
         return {
           id: index,
           poster: movie.poster,
-          title: movie.movie,
+          movie_title: movie.movie,
           full_line: movie.full_line,
           year: movie.year,
           director: movie.director,

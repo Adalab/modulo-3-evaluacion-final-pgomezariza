@@ -9,7 +9,6 @@ import MovieSceneList from './MovieSceneList';
 import Filters from './Filters';
 import MovieSceneDetail from './MovieSceneDetail';
 
-
 import '../styles/App.scss';
 
 
@@ -19,7 +18,6 @@ function App() {
   const [filterYears, setFilterYear] = useState('');
 
   useEffect(() => {
-    console.log(dataMovies)
     if (dataMovies.length === 0) {
       getApiData().then((dataClean) => {
         console.log(dataClean)
